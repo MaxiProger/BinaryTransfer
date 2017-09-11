@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">BinaryTransfer</string>
+    <string name="edittext">Введите число</string>
+    <string name="button">Перевести</string>
+    <string-array name="spinnerList">
+        <item>Десятичная</item>
+        <item>Двоичная</item>
+        <item>Шестнадцатиричная</item>
+    </string-array>
 </resources>
