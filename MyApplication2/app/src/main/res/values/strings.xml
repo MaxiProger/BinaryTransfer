@@ -7,4 +7,7 @@
         <item>Двоичная</item>
         <item>Шестнадцатиричная</item>
     </string-array>
+    <string name="ten">Десятичная:</string>
+    <string name="hex">Шестнадцатиричная:</string>
+    <string name="bin">Двоичная:</string>
 </resources>

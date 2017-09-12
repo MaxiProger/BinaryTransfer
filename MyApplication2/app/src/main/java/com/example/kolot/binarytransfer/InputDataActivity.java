@@ -25,10 +25,12 @@ public class InputDataActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String dataType = String.valueOf(spinner.getSelectedItem());
+                //if(dataType.contains("Десятичная:")) {
                 String inputData = textInput.getText().toString();
                 Intent intent = new Intent(InputDataActivity.this, OutputActivity.class);
                 intent.putExtra("input", inputData);
                 startActivity(intent);
+
             }
         });
     }
