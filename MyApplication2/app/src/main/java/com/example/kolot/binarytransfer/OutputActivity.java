@@ -5,10 +5,11 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
-public class OutputActivity extends AppCompatActivity {
+public class OutputActivity extends AppCompatActivity  {
     private TextView binOutput, hexOutput, tenOutput;
+    String inputString;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_output);
         binOutput = (TextView) findViewById(R.id.binOutput);
@@ -16,7 +17,10 @@ public class OutputActivity extends AppCompatActivity {
         tenOutput = (TextView) findViewById(R.id.tenOutput);
 
         Intent intent = getIntent();
-        String inputString = intent.getStringExtra("input");
+        inputString = intent.getStringExtra("input");
+
+        inputString=Calculate.toTen(inputString);
         tenOutput.setText(inputString);
     }
+
 }

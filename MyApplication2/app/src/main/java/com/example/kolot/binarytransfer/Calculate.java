@@ -1,7 +1,5 @@
 package com.example.kolot.binarytransfer;
 
-import android.support.annotation.NonNull;
-
 import java.util.ArrayList;
 
 import static java.lang.Math.pow;
@@ -12,35 +10,39 @@ import static java.lang.Math.pow;
 
 public class Calculate {
 
-    @NonNull
-    public String toTen (String string) {
+
+    public static String toTen (String string) {
+
         double sum=0,v=0;
         final int basis = 2;
-        int disconnect, size;
-        ArrayList<String > stringArrayList = new ArrayList<>();
-        for (String k:string.split("")){
-            stringArrayList.add(k);
-        }
+        int disconnect=0, disconnect1=0, disconnect2=0;
+        boolean check =false;
 
-        disconnect = stringArrayList.indexOf(",");
-        disconnect--;
+            ArrayList<Integer> integerArrayList = new ArrayList<>();
 
-        stringArrayList.remove(string.indexOf(","));
+            for (String k : string.split("")) {
+                if(k.isEmpty()){
+                    continue;
+                }
+                if (!k.contains(",") ) {
+                 integerArrayList.add(Integer.valueOf(k));
+                    disconnect1=integerArrayList.size();
+                } else {
+                    check=true;
+                    disconnect2 = string.indexOf(k);
+                    continue;
+                }
+            }
 
-        ArrayList<Integer> integerArrayList = new ArrayList<>();
-        for (String k: stringArrayList){
-            integerArrayList.add(Integer.valueOf(k));
-        }
-
+        if(check){
+            disconnect=disconnect2--;
+        }else disconnect=disconnect1;
 
         for (int i = 0; i<integerArrayList.size(); i++){
-            v = integerArrayList.get(i) * pow(basis, disconnect);
-            System.out.println(v + " + ");
-            disconnect--;
+            v = integerArrayList.get(i) * pow(basis, --disconnect);
             sum +=v;
         }
         string=String.valueOf(sum);
-        System.out.println(string);
         return string;
     }
 }
