@@ -18,8 +18,7 @@ public class OutputActivity extends AppCompatActivity  {
 
         Intent intent = getIntent();
         inputString = intent.getStringExtra("input");
-
-        inputString=Calculate.toTen(inputString);
+        inputString=String.valueOf(Calculate.toInt(inputString));
         tenOutput.setText(inputString);
     }
 

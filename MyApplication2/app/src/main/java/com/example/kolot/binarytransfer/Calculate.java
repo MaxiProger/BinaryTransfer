@@ -11,10 +11,9 @@ import static java.lang.Math.pow;
 public class Calculate {
 
 
-    public static String toTen (String string) {
+    public static String toInt (String string) {
 
-        double sum=0,v=0;
-        final int basis = 2;
+
         int disconnect=0, disconnect1=0, disconnect2=0;
         boolean check =false;
 
@@ -38,11 +37,15 @@ public class Calculate {
             disconnect=disconnect2--;
         }else disconnect=disconnect1;
 
+        double sum=0,v=0;
+        final int basis = 2;
+
         for (int i = 0; i<integerArrayList.size(); i++){
             v = integerArrayList.get(i) * pow(basis, --disconnect);
             sum +=v;
         }
-        string=String.valueOf(sum);
+        string = String.valueOf(sum);
         return string;
+
     }
 }
